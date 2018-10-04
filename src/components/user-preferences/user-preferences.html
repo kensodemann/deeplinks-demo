@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>User Preferences</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Use Celcius</ion-label>
+      <ion-toggle [(ngModel)]="useCelcius"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Location</ion-label>
+      <ion-select [(ngModel)]="city">
+        <ion-option *ngFor="let city of cities" [value]="city">{{city.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <button ion-button block color="secondary" (click)="save()">Save</button>
+</ion-footer>

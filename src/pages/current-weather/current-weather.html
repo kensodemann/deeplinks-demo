@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Current Weather</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openUserPreferences()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center padding>
+  <div class="information">
+    <ion-label class="city">{{cityName}}</ion-label>
+    <kws-temperature class="primary-value" [scale]="scale" temperature="{{currentWeather?.temperature}}"></kws-temperature>
+  </div>
+  <kws-condition [condition]="currentWeather?.condition" [iconPaths]="iconMap"></kws-condition>
+</ion-content>
